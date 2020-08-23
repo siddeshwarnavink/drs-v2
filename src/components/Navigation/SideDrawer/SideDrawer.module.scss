@@ -1,0 +1,24 @@
+@import "../../../scss/global";
+
+.SideDrawer {
+    padding-top: 7rem;
+    height: 100vh;
+    background: $theme-gradient;
+    position: fixed;
+    color: #ffffff;
+    display: none;
+
+    @media (min-width:993px) {
+        & {
+            display: block;
+        }
+    }
+
+    .SideDrawer__Links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+

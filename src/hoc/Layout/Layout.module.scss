@@ -1,0 +1,30 @@
+.PageContent,
+.DashboardPageContent {
+    padding: 0.01em 16px;
+}
+
+.PageContent:after,
+.PageContent:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.PageLayout {
+    display: flex;
+}
+
+.DashboardPageContent {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 4rem;
+
+    @media (min-width: 993px) {
+        & {
+            margin-top: 1.5rem;
+            margin-left: 1rem;
+            width: 80%;
+            margin-left: 18rem;
+        }
+    }
+}

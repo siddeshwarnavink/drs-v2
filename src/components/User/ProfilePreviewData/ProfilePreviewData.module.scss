@@ -1,0 +1,42 @@
+.ProfilePreviewData {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-right: 2rem;
+    cursor: pointer;
+
+    .ProfilePreviewData__ProfilePic {
+        width: 50px;
+    }
+
+    .ProfilePreviewData__Data {
+        padding: 5px 10px;
+
+        * {
+            display: block;
+        }
+
+        .ProfileData__Username {
+            font-weight: 600;
+            color: inherit;
+        }
+
+        .ProfileData__Role {
+            color: #ccc;
+        }
+    }
+
+    @media (max-width: 600px) {
+        & {
+            padding: 0;
+
+            .ProfilePreviewData__Data {
+                display: none;
+            }
+
+            .ProfilePreviewData__ProfilePic {
+                width: 45px;
+            }
+        }
+    }
+}

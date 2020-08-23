@@ -1,0 +1,15 @@
+.TruckStatus {
+    width: 100%;
+    display: block;
+    > div {
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 993px) {
+        & {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            column-gap: 1.5rem;
+        }
+    }
+}

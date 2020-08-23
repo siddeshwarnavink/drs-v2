@@ -1,0 +1,29 @@
+@import "../../../../scss/global";
+
+.FormControl {
+  padding: 12px 0;
+}
+
+.Label {
+  display: block;
+  font-weight: bold;
+  padding:  5px 0
+}
+
+.Input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline-color: $secondary-color;
+    outline-width: thin;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

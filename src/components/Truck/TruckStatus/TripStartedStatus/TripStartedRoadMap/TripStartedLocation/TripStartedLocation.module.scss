@@ -1,0 +1,27 @@
+@import "../../../../../../scss/global";
+
+.TripStartedLocation {
+    span {
+        display: block;
+        text-align: left;
+    }
+
+    .TripStartedLocation__Label, .TripStartedLocation__Timestamp {
+        color: $disable-color;
+    }
+
+    .TripStartedLocation__Timestamp {
+        font-size: 12px;
+    }
+
+    .TripStartedLocation__Location {
+        display: flex;
+
+        .TripStartedLocation__Label {
+            color: #000;
+            font-weight: bold;
+            padding-left: 5px;
+            padding-top: 3px;
+        }
+    }
+}

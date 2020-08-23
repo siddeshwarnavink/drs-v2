@@ -1,0 +1,16 @@
+.DriverAssignData {
+    .DriverAssignData__Profile {
+        display: flex;
+        padding: 10px 0;
+
+        .DriverAssignProfile__Dp {
+            width: 50px;
+            margin-right: 5px;
+        }
+    }
+
+    .DriverAssignData__Action {
+        text-align: center;
+        padding: 12px 0;
+    }
+}

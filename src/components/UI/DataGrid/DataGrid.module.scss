@@ -1,0 +1,9 @@
+.DataGrid {
+    display: grid;
+
+    @media (max-width:600px){
+        & {
+            grid-template-columns: auto auto;
+        }
+    }
+}

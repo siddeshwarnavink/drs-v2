@@ -1,0 +1,63 @@
+@import "../../../../scss/global";
+
+.TruckStatusAttentionAttention {
+    .TruckStatusAttentionAttention__Input {
+        display: none;
+
+        @media (max-width: 600px) {
+            & {
+                display: block;
+            }
+        }
+    }
+
+    .TruckStatusAttentionAttention__Grid {
+        display: flex;
+
+        .TruckStatusAttentionSidebar__List {
+            list-style: none;
+            padding: 0;
+            display: none;
+
+            @media (min-width: 993px) {
+                & {
+                    display: block;
+                }
+            }
+
+            .TruckStatusAttentionList__Item {
+                button {
+                    border: 0;
+                    background-color: transparent;
+                    text-transform: uppercase;
+                    display: flex;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 5px 12px;
+                    border-left: 0.2rem solid transparent;
+                    color: darken($color: $disable-color, $amount: 25);
+
+                    &.Active {
+                        border-color: $secondary-color;
+                        color: $primary-text-color;
+                    }
+
+                    > span {
+                        display: block;
+                    }
+
+                    .Text {
+                        margin-left: 5px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 993px) {
+            .TruckStatusAttentionAttention__Content {
+                margin-left: 1rem;
+            }
+        }
+    }
+}

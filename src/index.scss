@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: #efefef;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+main.container {
+    margin-top: 6rem;
+    width: 100%;
+}
+
+// react-datetimerange-picker
+.react-datetimerange-picker {
+    & > div {
+        padding: 10px;
+    }
+    * {
+        outline: none;
+        cursor: pointer;
+    }
+
+    @media (max-width:600px){
+        & {
+            width: 100%;
+        }
+    }
+}

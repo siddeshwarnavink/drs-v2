@@ -1,0 +1,27 @@
+@import "../../../../../scss/global";
+
+.TripStartedRoadMap {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+
+    .TripStartedRoadMap__Arrow {
+        font-weight: bold;
+        font-size: 3.5vw;
+        transform: scale(2, 0.8);
+        color: darken($color: $disable-color, $amount: 20);
+        display: none;
+    }
+
+    @media (min-width:993px){
+        .TripStartedRoadMap__Arrow {
+            display: block;
+        }
+    }
+
+    @media (max-width: 600px) {
+        & {
+            padding: 10px;
+        }
+    }
+}

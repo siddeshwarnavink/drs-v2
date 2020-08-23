@@ -1,0 +1,25 @@
+.TripForm {
+    padding: 10px;
+
+    .TripForm__Button {
+        padding: 1rem 0;
+    }
+
+    .TripFromGrid {
+        display: flex;
+        > section {
+            width: 50%;
+            margin-right: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            & {
+                display: block;
+
+                > section {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
