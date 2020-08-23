@@ -11,9 +11,10 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = () => {
+export const authSuccess = user => {
     return {
         type: actionTypes.AUTH_SUCCESS,
+        user
     };
 };
 
@@ -41,10 +42,9 @@ export const mobileAuth = (phoneNumber) => {
                 window.confirmationResult = confirmResult;
                 dispatch(mobileAuthPending(confirmResult))
             } else {
-                window.confirmationResult.confirm(phoneNumber).then((data) => {
+                window.confirmationResult.confirm(phoneNumber).then(() => {
                     const credential = firebase.auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, phoneNumber);
                     firebase.auth().signInWithCredential(credential);
-                    dispatch(authSuccess());
                 });
             }
         } catch (error) {
@@ -57,7 +57,11 @@ export const setInitialAuthState = () => {
     return (dispatch) => {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                dispatch(authSuccess);
+                dispatch(authSuccess({
+                    uid: user.uid,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber
+                }));
             }
         })
     }

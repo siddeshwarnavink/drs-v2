@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
+import { connect } from 'react-redux';
 
 import classes from './SideDrawer.module.scss';
 import Navigation from '../Navigation';
 import ProfilePreviewData from '../../User/ProfilePreviewData/ProfilePreviewData';
 import NavigationContext from '../../../context/navigation';
 
-const SideDrawer = () => {
+const SideDrawer = props => {
     const parrentNavigationContextCtx = useContext(NavigationContext);
 
     return (
         <div className={classes.SideDrawer}>
             <ProfilePreviewData
-                username="vsfarooqkhan"
+                username={props.userData.email.split('@')[0]}
                 role="Fleet Owner"
             />
             <ul className={classes.SideDrawer__Links}>
@@ -23,4 +24,8 @@ const SideDrawer = () => {
     )
 }
 
-export default SideDrawer;
+const mapStateToProps = (state) => ({
+    userData: state.auth.user
+});
+
+export default connect(mapStateToProps)(SideDrawer);

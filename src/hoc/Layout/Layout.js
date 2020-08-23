@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 import classes from './Layout.module.scss';
 import NavigationContext from '../../context/navigation';
@@ -18,7 +19,7 @@ const Layout = (props) => {
                 prfilePreview={
                     (props.isAuthenticated ? (
                         <ProfilePreviewData
-                            username="vsfarooqkhan"
+                            username={props.userData.email.split('@')[0]}
                             role="Fleet Owner"
                         />
                     ) : null)
@@ -43,4 +44,8 @@ const Layout = (props) => {
     );
 }
 
-export default Layout;
+const mapStateToProps = (state) => ({
+    userData: state.auth.user
+});
+
+export default connect(mapStateToProps)(Layout);
