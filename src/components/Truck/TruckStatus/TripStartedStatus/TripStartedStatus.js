@@ -4,14 +4,18 @@ import classes from './TripStartedStatus.module.scss';
 import TripStartedRoadMap from './TripStartedRoadMap/TripStartedRoadMap';
 import TruckStatusChip from './TruckStatusChip/TruckStatusChip';
 
-const tripStartedStatus = () => {
+const tripStartedStatus = props => {
     return (
         <div className={classes.TripStartedStatus}>
-            <TripStartedRoadMap />
+            <TripStartedRoadMap
+                startLocation={props.startLocation}
+                endLocation={props.endLocation}
+                tripStartedTime={props.tripStartedTime}
+            />
             <div className={classes.TripStartedStatus__StatusChips}>
-                <TruckStatusChip icon="local_gas_station" value="2.5L" />
-                <TruckStatusChip icon="speed" value="25" />
-                <TruckStatusChip icon="description" value="2" />
+                <TruckStatusChip icon="local_gas_station" value={`${Math.floor(parseInt(props.gpsFuel))} L`} />
+                <TruckStatusChip icon="speed" value={`${Math.floor(parseInt(props.currentOdo))}`} />
+                <TruckStatusChip icon="description" value={props.documents.split(',').length} />
             </div>
         </div>
     );

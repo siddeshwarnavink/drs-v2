@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import classes from './TruckStatusAttentionHistory.module.scss';
 import PageTitle from '../../../components/PageTitle/PageTitle';
@@ -12,6 +12,8 @@ import TruckStatusAttentionInstruction from './TruckStatusAttentionInstruction/T
 import TruckStatusAttentionAttention from './TruckStatusAttentionAttention/TruckStatusAttentionAttention';
 
 const TruckStatusAttentionHistory = props => {
+    const [isCallModallOpen, setIsCallModallOpen] = useState(false);
+
     return (
         <main className={['container', classes.TruckStatusAttentionHistory].join(' ')}>
             <PageTitle back="/">Attention History</PageTitle>
@@ -20,7 +22,10 @@ const TruckStatusAttentionHistory = props => {
                     <TruckStatusData />
                 </Card>
                 <Card>
-                    <DriverAssignData />
+                    <DriverAssignData
+                        isCallModallOpen={isCallModallOpen}
+                        setIsCallModallOpen={setIsCallModallOpen}
+                    />
                 </Card>
             </div>
 
