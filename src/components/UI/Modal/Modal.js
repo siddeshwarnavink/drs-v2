@@ -15,20 +15,41 @@ const Modal = props => {
                     opacity: props.show ? '1' : '0',
                 }}>
                 <header className={classes.Modal__Title}>
+                    {props.onGoBack ? (
+                        <button className={classes.ModalTitle__Back} onClick={props.onGoBack}>
+                            <span className="material-icons">
+                                arrow_back
+                            </span>
+                        </button>
+                    ) : null}
                     {props.caption}
-                    <button className={classes.ModalTitle__Close} onClick={props.modalClosed}>×</button>
+                    <button className={classes.ModalTitle__Close} onClick={props.modalClosed}>
+                        <span className="material-icons">
+                            close
+                        </span>
+                    </button>
                 </header>
-                <main className={classes.Modal__Content} style={{ maxHeight: props.maxHeight }}>
+                <main className={classes.Modal__Content} style={{ maxHeight: props.maxHeight, overflowY: props.noScroll ? 'auto' : 'scroll' }}>
                     {props.children}
                 </main>
                 <footer className={classes.Modal__Footer}>
+                    {props.onGoBack ? (
+                        <Button
+                            type="button"
+                            buttonType="flat"
+                            onClick={props.onGoBack}
+                        >
+                            Back
+                        </Button>
+                    ) : null}
+
                     <Button
                         type="button"
                         buttonType="flat"
                         buttonTheme="danger"
                         onClick={props.modalClosed}
                     >
-                        Cancel
+                        Close
                     </Button>
                 </footer>
             </div>

@@ -18,8 +18,19 @@
         }
 
         .TruckStatusData__Status {
-            color: $danger-color;
             font-size: 14px;
+
+            &.Danger {
+                color: $danger-color;
+            }
+
+            &.Warning {
+                color: $warning-color;
+            }
+
+            &.Success {
+                color: $success-color;
+            }
         }
     }
 }

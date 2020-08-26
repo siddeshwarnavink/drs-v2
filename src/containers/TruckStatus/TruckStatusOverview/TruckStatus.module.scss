@@ -5,10 +5,15 @@
         margin-bottom: 1rem;
     }
 
+    .CardLink {
+        text-decoration: none;
+        color: unset;
+    }
+
     @media (min-width: 993px) {
         & {
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: auto auto auto;
             column-gap: 1.5rem;
         }
     }

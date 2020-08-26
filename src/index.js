@@ -12,9 +12,13 @@ import './react-datetime.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './store/reducers/auth';
+import vehiclesReducer from './store/reducers/vehicles';
+import tripReducer from './store/reducers/trip';
 
 const rootReducer = combineReducers({
-  auth: authReducer
+  auth: authReducer,
+  vehicles: vehiclesReducer,
+  trip: tripReducer
 });
 
 const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;
@@ -26,11 +30,11 @@ const store = createStore(rootReducer, composeEnhancers(
 
 ReactDOM.render(
   // <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   // </React.StrictMode>,
   document.getElementById('root')
 );

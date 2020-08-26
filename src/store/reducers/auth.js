@@ -9,6 +9,11 @@ const initialState = {
     isAuthenticated: false,
     mobile: {
         confirmationResult: null
+    },
+    user: {
+        uid: null,
+        email: null,
+        phoneNumber: null
     }
 };
 
@@ -20,7 +25,10 @@ const authSuccess = (state, action) => {
     return updateObject(state, {
         isAuthenticated: true,
         error: null,
-        loading: false
+        loading: false,
+        user: {
+            ...action.user
+        }
     });
 };
 

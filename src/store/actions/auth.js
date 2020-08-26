@@ -3,6 +3,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 import firebase from '../../config/firebase';
+import axios from '../../springboot-axios';
 
 // Synchronous
 export const authStart = () => {
@@ -11,9 +12,10 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = () => {
+export const authSuccess = user => {
     return {
         type: actionTypes.AUTH_SUCCESS,
+        user
     };
 };
 
@@ -41,11 +43,25 @@ export const mobileAuth = (phoneNumber) => {
                 window.confirmationResult = confirmResult;
                 dispatch(mobileAuthPending(confirmResult))
             } else {
-                window.confirmationResult.confirm(phoneNumber).then((data) => {
-                    const credential = firebase.auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, phoneNumber);
-                    firebase.auth().signInWithCredential(credential);
-                    dispatch(authSuccess());
-                });
+                await window.confirmationResult.confirm(phoneNumber)
+                const credential = firebase.auth.PhoneAuthProvider.credential(window.confirmationResult.verificationId, phoneNumber);
+
+                const { user } = await firebase.auth().signInWithCredential(credential);
+
+                await firebase.firestore().collection("Users").doc(user.uid).update({ status: 1 });
+
+                // await axios({
+                //     url: '/authenticate',
+                //     method: 'POST',
+                //     headers: {
+                //         'Accept': 'application/json',
+                //         'Content-Type': 'application/json;charset=UTF-8'
+                //     },
+                //     data: {
+                //         username: user.uid,
+                //         password: user.phoneNumber
+                //     }
+                // });
             }
         } catch (error) {
             dispatch(authFail(error));
@@ -55,9 +71,28 @@ export const mobileAuth = (phoneNumber) => {
 
 export const setInitialAuthState = () => {
     return (dispatch) => {
-        firebase.auth().onAuthStateChanged(user => {
+        firebase.auth().onAuthStateChanged(async user => {
             if (user) {
-                dispatch(authSuccess);
+                await firebase.firestore().collection("Users").doc(user.uid).update({ status: 1 });
+
+                // await axios({
+                //     url: '/authenticate',
+                //     method: 'POST',
+                //     headers: {
+                //         'Accept': 'application/json',
+                //         'Content-Type': 'application/json;charset=UTF-8'
+                //     },
+                //     data: {
+                //         username: user.uid,
+                //         password: user.phoneNumber
+                //     }
+                // });
+
+                dispatch(authSuccess({
+                    uid: user.uid,
+                    email: user.email,
+                    phoneNumber: user.phoneNumber
+                }));
             }
         })
     }

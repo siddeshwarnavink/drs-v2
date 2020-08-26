@@ -17,22 +17,33 @@
         background: $theme-gradient;
         color: $primary-color;
         padding: 12px 16px;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         position: fixed;
         width: 100%;
 
-        .ModalTitle__Close {
+        .ModalTitle__Close,
+        .ModalTitle__Back {
             float: right;
             border: 0;
             color: inherit;
             background-color: transparent;
-            font-size: 21px;
+            font-size: 1rem;
             outline: none;
+            cursor: pointer;
+        }
+
+        .ModalTitle__Close {
+            margin-top: 1px;
+        }
+
+        .ModalTitle__Back {
+            float: left;
         }
     }
 
     .Modal__Content {
         margin: 2.5rem 0;
+        margin-top: 3.5rem;
         padding: 0 16px;
         overflow-y: scroll;
     }
@@ -51,7 +62,7 @@
         }
     }
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
         & {
             width: 100%;
             top: 0;
@@ -61,5 +72,3 @@
         }
     }
 }
-
-
