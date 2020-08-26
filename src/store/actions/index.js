@@ -10,3 +10,7 @@ export {
     startLiveVehicleStatus,
     stopLiveVehicleStatus
 } from './vehicles/vehicles';
+
+export {
+    loadTripData
+} from './trip/trip';

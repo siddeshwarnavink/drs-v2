@@ -1,0 +1,27 @@
+@import "../../scss/global";
+
+.Fallback {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+    color: darken($color: $disable-color, $amount: 25);
+
+    * {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+
+    .Fallback__Icon {
+        font-size: 3rem;
+    }
+
+    .Fallback__Message {
+        font-size: 2rem;
+        padding: 0;
+        margin: 0;
+    }
+}

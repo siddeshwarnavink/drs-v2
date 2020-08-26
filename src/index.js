@@ -13,10 +13,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './store/reducers/auth';
 import vehiclesReducer from './store/reducers/vehicles';
+import tripReducer from './store/reducers/trip';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  vehicles: vehiclesReducer
+  vehicles: vehiclesReducer,
+  trip: tripReducer
 });
 
 const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose;

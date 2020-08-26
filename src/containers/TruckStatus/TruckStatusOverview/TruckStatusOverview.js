@@ -26,7 +26,6 @@ const TruckStatus = props => {
         return function cleanup() {
             props.unsubscribeLiveVehicleStatus(subscriptionKey);
         }
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -57,7 +56,6 @@ const TruckStatus = props => {
                                     />
                                 ) : null}
                                 <Link to={`/fleetOwner/TruckStatus/${vehicle.vehicleId}`} className={classes.CardLink}>
-
                                     <TruckStatusData
                                         vehicleId={vehicle.vehicleId}
                                         vehicleStatus={vehicle.vehicleStatus}
