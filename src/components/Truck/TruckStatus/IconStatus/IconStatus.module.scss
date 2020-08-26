@@ -1,0 +1,21 @@
+@import "../../../../scss/global";
+
+.IconStatus {
+    padding: 2rem;
+
+    * {
+        display: block;
+        color: $secondary-color;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .IconStatus__Icon {
+        font-size: 3.2rem;
+        margin-bottom: .5rem;
+    }
+
+    .IconStatus__Label {
+        text-transform: uppercase;
+    }
+}

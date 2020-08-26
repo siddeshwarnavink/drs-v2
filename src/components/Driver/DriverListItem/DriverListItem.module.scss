@@ -1,0 +1,15 @@
+.DriverListItem {
+    display: flex;
+    margin-bottom: .5rem;
+
+    .DriverListItem__ProfilePic {
+        width: 45px;
+    }
+
+    .DriverListItem__Data {
+        margin-left: 1rem;
+        & > span {
+            display: block;
+        }
+    }
+}

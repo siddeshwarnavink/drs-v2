@@ -1,0 +1,27 @@
+@import "../../../../../scss/global";
+
+.TruckStatusChip {
+    border: 0.5px solid $disable-color;
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    color: $disable-color;
+    font-weight: bold;
+    font-size: 12px;
+    justify-content: flex-start;
+    min-width: 4rem;
+
+    * {
+        display: block;
+        text-align: center;
+    }
+
+    .TruckStatusChip__Icon {
+        font-size: 1rem;
+        color: darken($color: $disable-color, $amount: 25);
+    }
+
+    .TruckStatusChip__Label {
+        font-size: .8rem;
+    }
+}

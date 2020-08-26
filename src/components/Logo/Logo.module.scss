@@ -1,0 +1,21 @@
+.TextLogo{
+    display: none;
+    font-size: 22px;
+    padding: 10px 12px;
+
+    @media (max-width:600px) {
+        & {
+            display: block;
+        }
+    }   
+}
+
+.ImageLogo {
+    display: block;
+
+    @media (max-width:600px) {
+        & {
+            display: none;
+        }
+    }   
+}

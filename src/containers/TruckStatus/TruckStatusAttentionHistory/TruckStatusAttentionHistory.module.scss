@@ -1,0 +1,15 @@
+.TruckStatusAttentionHistory {
+    .TruckStatusAttentionHistory__Grid {
+        > div {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 993px) {
+            & {
+                display: grid;
+                grid-template-columns: 60% 40%;
+                column-gap: 1.5rem;
+            }
+        }
+    }
+}

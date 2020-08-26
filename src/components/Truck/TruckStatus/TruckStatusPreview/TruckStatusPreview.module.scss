@@ -1,0 +1,36 @@
+@import "../../../../scss/global";
+
+.TruckStatusPreview {
+    display: flex;
+    padding: 12px;
+
+    .TruckStatusPreview__Image {
+        width: 36px;
+        height: 36px;
+    }
+
+    .TruckStatusPreview__Data {
+        margin-left: 1rem;
+
+        * {
+            display: block;
+            font-weight: bold;
+        }
+
+        .TruckStatusData__Status {
+            font-size: 14px;
+
+            &.Danger {
+                color: $danger-color;
+            }
+
+            &.Warning {
+                color: $warning-color;
+            }
+
+            &.Success {
+                color: $success-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../../../../scss/global";
+
+.TruckStatusAttentionAttentionPOD {
+    .TruckStatusAttentionAttentionPOD__Item {
+        display: flex;
+        margin: 10px;
+        padding: 12px;
+        border-top: 1px solid $disable-color;
+
+        &:nth-child(1) {
+            border-top: none;
+        }
+
+        .TruckStatusAttentionAttentionPODItem__Image {
+            width: 20%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .TruckStatusAttentionAttentionPODItem__Data {
+            margin-left: 1rem;
+        }
+    }
+}

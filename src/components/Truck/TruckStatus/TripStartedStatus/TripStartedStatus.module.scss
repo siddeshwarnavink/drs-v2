@@ -1,0 +1,11 @@
+.TripStartedStatus {
+    .TripStartedStatus__StatusChips {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        
+        div {
+            margin-left: 10px;
+        }
+    }
+}
